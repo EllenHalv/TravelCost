@@ -20,7 +20,7 @@ public class Main {
 
         // print info about each model
         for (Vehicle vehicle : vehicles) {
-            String price = String.format("%.2f", (vehicle.fuelConsumption * 2) * fuelPrice);
+            String price = String.format("%.2f", (vehicle.fuelConsumption * (travelDistance / 100) * fuelPrice));
 
             System.out.println("\n" + vehicle.brand + " " + vehicle.model + " (" + vehicle.year + ")" +
                     "\nFuel consumption: " + vehicle.fuelConsumption + " l/100 km" +
@@ -28,20 +28,20 @@ public class Main {
             if (vehicle instanceof Car) {
                 Car car = (Car) vehicle;
                 System.out.println("Number of doors: " + car.getNumOfDoors() + "\nTravel distance: " + travelDistance + " km" +
-                        "\nFuel needed: " + vehicle.fuelConsumption * 2 + "l" + "\nPrice: " + price + " kr");
+                        "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr");
 
 
             } else if (vehicle instanceof Truck) {
                 Truck truck = (Truck) vehicle;
                 System.out.println("Number of doors: " + truck.getDoors() + "\nCapacity: " + truck.getCapacity() +
-                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + vehicle.fuelConsumption * 2 + "l" + "\nPrice: " + price + " kr");
+                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr");
 
 
             } else if (vehicle instanceof Motorcycle) {
                 Motorcycle motorcycle = (Motorcycle) vehicle;
                 System.out.print("Has windshield: ");
                 System.out.print(motorcycle.hasWindShield() ? "True" : "False" + "\nTravel distance: " + travelDistance + " km" +
-                        "\nFuel needed: " + vehicle.fuelConsumption * 2 + "l" + "\nPrice: " + price + " kr\n");
+                        "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr\n");
             }
         }
         // find the cheapest alternative
@@ -49,7 +49,7 @@ public class Main {
         String cheapestVehicle = "";
 
         for (Vehicle vehicle : vehicles) {
-            float price = (float) (Math.round((vehicle.fuelConsumption * 2) * fuelPrice * 100.0) / 100.0);
+            float price = (float) ((vehicle.fuelConsumption * (travelDistance / 100) * fuelPrice));
             if (price < cheapestPrice) {
                 cheapestPrice = price;
                 cheapestVehicle = vehicle.brand + " " + vehicle.model + " (" + vehicle.year + ")";
