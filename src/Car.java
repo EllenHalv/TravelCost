@@ -1,4 +1,5 @@
 public class Car extends Vehicle {
+    
     private int doors;
 
     public Car(String brand, float fuelConsumption, int maxSpeed, int year, String model, int doors) {
