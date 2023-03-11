@@ -1,6 +1,8 @@
 public class Truck extends Vehicle {
+    
     private int doors;
-    private int capacity; // Lastkapaciteten (i ton)
+    private int capacity; // Lastkapacitet (i ton)
+    
     public Truck(String brand, float fuelConsumption, int maxSpeed, int year, String model, int doors, int capacity) {
         super.brand = brand;
         super.fuelConsumption = fuelConsumption;
@@ -10,6 +12,7 @@ public class Truck extends Vehicle {
         this.doors = doors;
         this.capacity = capacity;
     }
+    
     @Override
     float getFuelConsumption() {
         return fuelConsumption;
