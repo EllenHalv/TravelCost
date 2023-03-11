@@ -1,5 +1,7 @@
 public class Motorcycle extends Vehicle {
+    
     private boolean windShield;
+    
     public Motorcycle(String brand, float fuelConsumption, int maxSpeed, int year, String model, boolean windShield) {
 
         super.brand = brand;
@@ -9,6 +11,7 @@ public class Motorcycle extends Vehicle {
         super.model = model;
         this.windShield = windShield;
     }
+    
     @Override
     float getFuelConsumption() {
         return fuelConsumption;
