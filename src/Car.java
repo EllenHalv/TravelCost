@@ -1,7 +1,7 @@
 public class Car extends Vehicle {
     private int doors;
 
-    public Car(String brand, double fuelConsumption, int maxSpeed, int year, String model, int doors) {
+    public Car(String brand, float fuelConsumption, int maxSpeed, int year, String model, int doors) {
         super.brand = brand;
         super.fuelConsumption = fuelConsumption;
         super.maxSpeed = maxSpeed;
@@ -11,12 +11,16 @@ public class Car extends Vehicle {
     }
 
     @Override
-    double getFuelConsumption() {
+    float getFuelConsumption() {
         return fuelConsumption;
     }
 
     @Override
     int getMaxSpeed() {
         return maxSpeed;
+    }
+
+    int getNumOfDoors() {
+        return doors;
     }
 }
