@@ -34,7 +34,8 @@ public class Main {
             } else if (vehicle instanceof Truck) {
                 Truck truck = (Truck) vehicle;
                 System.out.println("Number of doors: " + truck.getDoors() + "\nCapacity: " + truck.getCapacity() +
-                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr");
+                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" +
+                        "\nPrice: " + price + " kr");
 
 
             } else if (vehicle instanceof Motorcycle) {
