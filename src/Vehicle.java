@@ -3,9 +3,9 @@ abstract class Vehicle {
     String model;
     int year;
     int maxSpeed;
-    double fuelConsumption;
+    float fuelConsumption;
 
-    abstract double getFuelConsumption();
+    abstract float getFuelConsumption();
 
     abstract int getMaxSpeed();
 }
