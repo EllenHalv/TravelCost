@@ -21,6 +21,7 @@ public class Main {
         // print info about each model
         for (Vehicle vehicle : vehicles) {
             String price = String.format("%.2f", (vehicle.fuelConsumption * (travelDistance / 100) * fuelPrice));
+            String fuelNeeded = String.format("%.2f", (vehicle.fuelConsumption * (travelDistance / 100)));
 
             System.out.println("\n" + vehicle.brand + " " + vehicle.model + " (" + vehicle.year + ")" +
                     "\nFuel consumption: " + vehicle.fuelConsumption + " l/100 km" +
@@ -28,13 +29,13 @@ public class Main {
             if (vehicle instanceof Car) {
                 Car car = (Car) vehicle;
                 System.out.println("Number of doors: " + car.getNumOfDoors() + "\nTravel distance: " + travelDistance + " km" +
-                        "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr");
+                        "\nFuel needed: " + fuelNeeded + "l" + "\nPrice: " + price + " kr");
 
 
             } else if (vehicle instanceof Truck) {
                 Truck truck = (Truck) vehicle;
                 System.out.println("Number of doors: " + truck.getDoors() + "\nCapacity: " + truck.getCapacity() +
-                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" +
+                        "\nTravel distance: " + travelDistance + " km" + "\nFuel needed: " + fuelNeeded + "l" +
                         "\nPrice: " + price + " kr");
 
 
@@ -42,7 +43,7 @@ public class Main {
                 Motorcycle motorcycle = (Motorcycle) vehicle;
                 System.out.print("Has windshield: ");
                 System.out.print(motorcycle.hasWindShield() ? "True" : "False" + "\nTravel distance: " + travelDistance + " km" +
-                        "\nFuel needed: " + (vehicle.fuelConsumption * (travelDistance / 100)) + "l" + "\nPrice: " + price + " kr\n");
+                        "\nFuel needed: " + fuelNeeded + "l" + "\nPrice: " + price + " kr\n");
             }
         }
         // find the cheapest alternative
